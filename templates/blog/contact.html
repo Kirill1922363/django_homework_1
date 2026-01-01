@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <nav>
+        <ul>
+            <li><a href="{% url 'blog:home' %}">Home</a></li>
+            <li><a href="{% url 'blog:all_posts' %}">Posts</a></li>
+            <li><a href="{% url 'blog:weather' %}">Weather</a></li>
+            <li><a href="{% url 'blog:contact' %}">Contact</a></li>
+        </ul>
+    </nav>
+    <title>Контакти - {{ contact }}</title>
+</head>
+<body>
+
+    <h1>Зв'яжіться з нами</h1>
+    <p>Якщо у вас є питання або пропозиції, будь ласка, зв'яжіться з нами за наступною інформацією:</p>
+
+    <ul>
+        <li>Email: {{ email }}</li>
+        <li>Телефон: {{ phone }}</li>
+        <li>Адреса: {{ address }}</li>
+    </ul>
+
+    <h2>Форма зворотного зв'язку</h2>
+    <form action="{{ form_action }}" method="post">
+        {% csrf_token %}
+        <label for="name">Ім'я:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <label for="message">Повідомлення:</label><br>
+        <textarea id="message" name="message" rows="4" required></textarea><br><br>
+        
+        <input type="submit" value="Відправити">
+    </form>

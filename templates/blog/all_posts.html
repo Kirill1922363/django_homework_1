@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} posts - {{blog_name}} {% endblock %}
+
+{% block content %}
+    <nav>
+        <ul>
+            <li><a href="{% url 'blog:home' %}">Home</a></li>
+            <li><a href="{% url 'blog:all_posts' %}">Posts</a></li>
+            <li><a href="{% url 'blog:weather' %}">Weather</a></li>
+            <li><a href="{% url 'blog:contact' %}">Contact</a></li>
+        </ul>
+    </nav>
+    <h2>HEllo on  {{blog_name}} </h2>
+    
+    {% for post in posts %}
+        <article>
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.content }}</p>
+
+            <p><em>Published on: {{ post.published_date|default:"Неопубліковано" }}</em></p>
+
+            </article>
+
+    {% endfor %}
+
+
+    <h4> Total Posts: {{ posts|length }} </h4>
+{% endblock %}

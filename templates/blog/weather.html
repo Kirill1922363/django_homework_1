@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <nav>
+        <ul>
+            <li><a href="{% url 'blog:home' %}">Home</a></li>
+            <li><a href="{% url 'blog:all_posts' %}">Posts</a></li>
+            <li><a href="{% url 'blog:weather' %}">Weather</a></li>
+            <li><a href="{% url 'blog:contact' %}">Contact</a></li>
+        </ul>
+    </nav>
+    <title>Погода - {{city}}</title>
+</head>
+<body>
+    <h1>Погода у місті {{city}}</h1>
+    
+    <h2>Поточна температура: {{temperature}}°C</h2>
+    
+    {% if temperature > 25 %}
+        <p><strong>Спекотно 🔥</strong></p>
+    {% elif temperature >= 15 %}
+        <p><strong>Комфортно 😊</strong></p>
+    {% else %}
+        <p><strong>Прохолодно 🥶</strong></p>
+    {% endif %}
+    
+    <p>Вологість: {{humidity}}%</p>
+    
+    <h3>Умови погоди:</h3>
+    <ul>
+        {% for condition in conditions %}
+            <li>{{condition}}</li>
+        {% endfor %}
+    </ul>
+    
+   <h3>Прогноз на наступні дні:</h3>
+    {% for day_forecast in forecast %}
+    <div>
+        <p><strong>{{day_forecast.day}}:</strong> {{day_forecast.temp}}°C</p>
+        {% if day_forecast.temp > 25 %}
+            <p>Спекотно 🔥</p>
+        {% elif day_forecast.temp >= 15 %}
+            <p>Комфортно 😊</p>
+        {% else %}
+            <p>Прохолодно 🥶</p>
+        {% endif %}
+    </div>
+    <br>
+
+{% endfor %}
+
+</body>
+</html>
+
+    {% comment "task" %}
+    1) Відобрази назву міста та температуру
+    2) Додай умовну логіку:
+    3) Якщо температура > 25° - покажи "Спекотно
+    🔥"
+    4) Якщо 15° ≤ температура ≤ 25° - покажи "Комфортно
+    5) Якщо < 15° - покажи "Прохолодно
+    ❄️"
+    😊"
+    
+    6) Відобрази всі умови погоди списком
+    7) Покажи прогноз на наступні дні
+
+    {% endcomment %}
+
+
+
+
+
