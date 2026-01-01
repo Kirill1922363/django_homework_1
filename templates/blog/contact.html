@@ -1,7 +1,12 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/global.css' %}">
+    <title>Контакти - {{ contact }}</title>
+</head>
+<body>    
     <nav>
         <ul>
             <li><a href="{% url 'blog:home' %}">Home</a></li>
@@ -10,9 +15,6 @@
             <li><a href="{% url 'blog:contact' %}">Contact</a></li>
         </ul>
     </nav>
-    <title>Контакти - {{ contact }}</title>
-</head>
-<body>
 
     <h1>Зв'яжіться з нами</h1>
     <p>Якщо у вас є питання або пропозиції, будь ласка, зв'яжіться з нами за наступною інформацією:</p>

@@ -4,14 +4,6 @@
 {% block title %} posts - {{blog_name}} {% endblock %}
 
 {% block content %}
-    <nav>
-        <ul>
-            <li><a href="{% url 'blog:home' %}">Home</a></li>
-            <li><a href="{% url 'blog:all_posts' %}">Posts</a></li>
-            <li><a href="{% url 'blog:weather' %}">Weather</a></li>
-            <li><a href="{% url 'blog:contact' %}">Contact</a></li>
-        </ul>
-    </nav>
     <h2>HEllo on  {{blog_name}} </h2>
     
     {% for post in posts %}

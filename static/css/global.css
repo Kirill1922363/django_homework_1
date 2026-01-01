@@ -1,6 +1,238 @@
+/* static/css/global.css */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #e8f4f8;
+}
+
+/* Навігація */
+nav {
+    background-color: #2c3e50;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0;
+}
+
+
+nav a:hover {
+    background-color: #34495e;
+}
+
+/* Контент */
+main {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Заголовки */
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 10px;
+    margin: 0 0 30px 0;
+}
+
+h2 {
+    color: #34495e;
+    text-align: center;
+    font-size: 2em;
+    margin: 20px 0;
+}
+
+h3 {
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 10px;
+    margin: 30px 0 15px 0;
+}
+
+h4 {
+    color: #2c3e50;
+    margin: 20px 0;
+    text-align: center;
+    font-size: 1.3em;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin: 15px 0;
+}
+
+/* Температурні індикатори */
+p strong {
+    padding: 10px 20px;
+    border-radius: 25px;
+    display: inline-block;
+    font-size: 1.3em;
+}
+
+/* Стилі для статей */
+article {
+    background-color: #f9f9f9;
+    padding: 25px;
+    margin: 20px 0;
+    border-left: 5px solid #667eea;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+article h3 {
+    color: #667eea;
+    margin-top: 0;
+    border: none;
+}
+
+article p {
+    margin: 10px 0;
+}
+
+article em {
+    color: #7f8c8d;
+    font-size: 0.9em;
+}
+
+/* Списки */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+ul li {
+    background-color: #f8f9fa;
+    margin: 10px 0;
+    padding: 15px 20px;
+    border-left: 4px solid #3498db;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    font-size: 1.1em;
+}
+
+/* Прогноз погоди */
+div > p {
+    margin: 10px 0;
+}
+
+div > p strong {
+    color: #2c3e50;
+}
+
+/* Форми */
+form {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+label {
+    display: block;
+    margin: 15px 0 5px 0;
+    color: #2c3e50;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 8px rgba(102, 126, 234, 0.3);
+}
+
+input[type="submit"] {
+    background-color: #667eea;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover {
+    background-color: #5568d3;
+}
+
+/* Футер */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1em;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+    
+    nav a {
+        text-align: center;
+        border-bottom: 1px solid #34495e;
+    }
+    
+    main {
+        padding: 15px;
+        margin: 10px;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+    }
 }
